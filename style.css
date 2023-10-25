@@ -1,0 +1,107 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+    --light-bg: #f0f0f0;
+    --dark-bg: #111;
+    --dark-text: #fff;
+}
+
+body {
+    background-color: var(--dark-bg); /* Set a dark background */
+    color: var(--dark-text); /* Set light text color for dark mode */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s; /* Transition background and text color */
+}
+
+body.light-mode {
+    background-color: var(--light-bg); /* Revert to light background in light mode */
+    color: #000; /* Set dark text color in light mode */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the text horizontally */
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.header-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    text-transform: uppercase;
+    /* Add any additional styles to enhance visual appeal */
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*  Movie container that holds movie details */
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3); /*Adding a bit of neuromorphism design */
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.movie-info {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.movie img{
+    width: 100%;
+    object-fit: cover;
+    height: 85%;    
+}
+
+/* Dark Mode Button */
+.dark-mode-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Overview Styles with Animation */
+.overview {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 29, 29, 0.902);
+    padding: 1rem;
+    max-height: 100%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
